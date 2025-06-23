@@ -1,0 +1,248 @@
+2025-06-23 11:17:20 INFO: BEGIN (implicit)
+2025-06-23 11:17:20 INFO: PRAGMA main.table_info("usuarios")
+2025-06-23 11:17:20 INFO: [raw sql] ()
+2025-06-23 11:17:20 INFO: PRAGMA main.table_info("animales_marinos")
+2025-06-23 11:17:20 INFO: [raw sql] ()
+2025-06-23 11:17:20 INFO: COMMIT
+2025-06-23 11:17:20 INFO: BEGIN (implicit)
+2025-06-23 11:17:20 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:17:20 INFO: [generated in 0.00017s] ('admin', 1, 0)
+2025-06-23 11:17:20 INFO: ROLLBACK
+2025-06-23 11:17:20 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-23 11:17:20 INFO: [33mPress CTRL+C to quit[0m
+2025-06-23 11:17:20 INFO:  * Restarting with stat
+2025-06-23 11:17:21 INFO: BEGIN (implicit)
+2025-06-23 11:17:21 INFO: PRAGMA main.table_info("usuarios")
+2025-06-23 11:17:21 INFO: [raw sql] ()
+2025-06-23 11:17:21 INFO: PRAGMA main.table_info("animales_marinos")
+2025-06-23 11:17:21 INFO: [raw sql] ()
+2025-06-23 11:17:21 INFO: COMMIT
+2025-06-23 11:17:21 INFO: BEGIN (implicit)
+2025-06-23 11:17:21 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:17:21 INFO: [generated in 0.00023s] ('admin', 1, 0)
+2025-06-23 11:17:21 INFO: ROLLBACK
+2025-06-23 11:17:21 WARNING:  * Debugger is active!
+2025-06-23 11:17:21 INFO:  * Debugger PIN: 846-293-482
+2025-06-23 11:23:42 INFO: 127.0.0.1 - - [23/Jun/2025 11:23:42] "GET / HTTP/1.1" 200 -
+2025-06-23 11:23:44 INFO: 127.0.0.1 - - [23/Jun/2025 11:23:44] "GET /login HTTP/1.1" 200 -
+2025-06-23 11:23:44 WARNING: 404 - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-06-23 11:23:45 INFO: 127.0.0.1 - - [23/Jun/2025 11:23:45] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-06-23 11:23:53 INFO: BEGIN (implicit)
+2025-06-23 11:23:53 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:23:53 INFO: [cached since 392.2s ago] ('admin', 1, 0)
+2025-06-23 11:23:53 INFO: ROLLBACK
+2025-06-23 11:23:53 INFO: 127.0.0.1 - - [23/Jun/2025 11:23:53] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-06-23 11:23:53 INFO: BEGIN (implicit)
+2025-06-23 11:23:53 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios
+2025-06-23 11:23:53 INFO: [generated in 0.00018s] ()
+2025-06-23 11:23:53 INFO: ROLLBACK
+2025-06-23 11:23:53 INFO: 127.0.0.1 - - [23/Jun/2025 11:23:53] "GET /perfil HTTP/1.1" 200 -
+2025-06-23 11:23:53 WARNING: 404 - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-06-23 11:23:53 INFO: 127.0.0.1 - - [23/Jun/2025 11:23:53] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-06-23 11:24:05 ERROR: Excepción general: list object has no element 2
+Traceback (most recent call last):
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\app.py", line 32, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\app.py", line 41, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\app.py", line 199, in admin_errores
+    return render_template('admin_errores.html', logs=logs, usuario=session.get('usuario'))
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\templates\admin_errores.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\templates\base.html", line 82, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\templates\admin_errores.html", line 32, in block 'content'
+    <td><strong>{{ line.split(' ')[2].replace(':','') }}</strong></td>
+    ^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 2
+2025-06-23 11:24:05 INFO: 127.0.0.1 - - [23/Jun/2025 11:24:05] "[35m[1mGET /admin/errores HTTP/1.1[0m" 500 -
+2025-06-23 11:24:05 INFO: 127.0.0.1 - - [23/Jun/2025 11:24:05] "GET /admin/errores?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-06-23 11:24:05 INFO: 127.0.0.1 - - [23/Jun/2025 11:24:05] "GET /admin/errores?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-06-23 11:24:05 INFO: 127.0.0.1 - - [23/Jun/2025 11:24:05] "GET /admin/errores?__debugger__=yes&cmd=resource&f=console.png&s=kOQgwy6GyE28wGUnwiJ0 HTTP/1.1" 200 -
+2025-06-23 11:24:05 INFO: 127.0.0.1 - - [23/Jun/2025 11:24:05] "GET /admin/errores?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-06-23 11:28:17 INFO: BEGIN (implicit)
+2025-06-23 11:28:17 INFO: PRAGMA main.table_info("usuarios")
+2025-06-23 11:28:17 INFO: [raw sql] ()
+2025-06-23 11:28:17 INFO: PRAGMA main.table_info("animales_marinos")
+2025-06-23 11:28:17 INFO: [raw sql] ()
+2025-06-23 11:28:17 INFO: COMMIT
+2025-06-23 11:28:17 INFO: BEGIN (implicit)
+2025-06-23 11:28:17 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:28:17 INFO: [generated in 0.00030s] ('admin', 1, 0)
+2025-06-23 11:28:17 INFO: ROLLBACK
+2025-06-23 11:28:17 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-23 11:28:17 INFO: [33mPress CTRL+C to quit[0m
+2025-06-23 11:28:17 INFO:  * Restarting with stat
+2025-06-23 11:28:19 INFO: BEGIN (implicit)
+2025-06-23 11:28:19 INFO: PRAGMA main.table_info("usuarios")
+2025-06-23 11:28:19 INFO: [raw sql] ()
+2025-06-23 11:28:19 INFO: PRAGMA main.table_info("animales_marinos")
+2025-06-23 11:28:19 INFO: [raw sql] ()
+2025-06-23 11:28:19 INFO: COMMIT
+2025-06-23 11:28:19 INFO: BEGIN (implicit)
+2025-06-23 11:28:19 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:28:19 INFO: [generated in 0.00023s] ('admin', 1, 0)
+2025-06-23 11:28:19 INFO: ROLLBACK
+2025-06-23 11:28:19 WARNING:  * Debugger is active!
+2025-06-23 11:28:19 INFO:  * Debugger PIN: 846-293-482
+2025-06-23 11:28:26 ERROR: Excepción general: list object has no element 2
+Traceback (most recent call last):
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\app.py", line 32, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\app.py", line 41, in decorated_function
+    return f(*args, **kwargs)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\app.py", line 199, in admin_errores
+    return render_template('admin_errores.html', logs=logs, usuario=session.get('usuario'))
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\templates\admin_errores.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\templates\base.html", line 82, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\templates\admin_errores.html", line 32, in block 'content'
+    <td><strong>{{ line.split(' ')[2].replace(':','') }}</strong></td>
+    ^
+  File "C:\Users\icman\OneDrive\Documentos\4º Ingenieria Informatica\2 CUATRIMESTRE\Sistemas distribuidos\OCEANOWEB\flask-api\.venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 2
+2025-06-23 11:28:26 INFO: 127.0.0.1 - - [23/Jun/2025 11:28:26] "[35m[1mGET /admin/errores HTTP/1.1[0m" 500 -
+2025-06-23 11:28:26 WARNING: 404 - 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-06-23 11:28:26 INFO: 127.0.0.1 - - [23/Jun/2025 11:28:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-23 11:28:31 INFO: 127.0.0.1 - - [23/Jun/2025 11:28:31] "GET /admin/errores HTTP/1.1" 200 -
+2025-06-23 11:29:54 INFO: BEGIN (implicit)
+2025-06-23 11:29:54 INFO: PRAGMA main.table_info("usuarios")
+2025-06-23 11:29:54 INFO: [raw sql] ()
+2025-06-23 11:29:54 INFO: PRAGMA main.table_info("animales_marinos")
+2025-06-23 11:29:54 INFO: [raw sql] ()
+2025-06-23 11:29:54 INFO: COMMIT
+2025-06-23 11:29:54 INFO: BEGIN (implicit)
+2025-06-23 11:29:54 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:29:54 INFO: [generated in 0.00020s] ('admin', 1, 0)
+2025-06-23 11:29:54 INFO: ROLLBACK
+2025-06-23 11:29:54 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-23 11:29:54 INFO: [33mPress CTRL+C to quit[0m
+2025-06-23 11:29:54 INFO:  * Restarting with stat
+2025-06-23 11:29:55 INFO: BEGIN (implicit)
+2025-06-23 11:29:55 INFO: PRAGMA main.table_info("usuarios")
+2025-06-23 11:29:55 INFO: [raw sql] ()
+2025-06-23 11:29:55 INFO: PRAGMA main.table_info("animales_marinos")
+2025-06-23 11:29:55 INFO: [raw sql] ()
+2025-06-23 11:29:55 INFO: COMMIT
+2025-06-23 11:29:55 INFO: BEGIN (implicit)
+2025-06-23 11:29:55 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:29:55 INFO: [generated in 0.00024s] ('admin', 1, 0)
+2025-06-23 11:29:55 INFO: ROLLBACK
+2025-06-23 11:29:55 WARNING:  * Debugger is active!
+2025-06-23 11:29:55 INFO:  * Debugger PIN: 846-293-482
+2025-06-23 11:30:01 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:01] "GET /admin/errores HTTP/1.1" 200 -
+2025-06-23 11:30:07 WARNING: Simulando error 404
+2025-06-23 11:30:07 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:07] "[33mGET /admin/simular_error/404 HTTP/1.1[0m" 404 -
+2025-06-23 11:30:21 INFO: BEGIN (implicit)
+2025-06-23 11:30:21 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios
+2025-06-23 11:30:21 INFO: [generated in 0.00078s] ()
+2025-06-23 11:30:21 INFO: ROLLBACK
+2025-06-23 11:30:21 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:21] "GET /perfil HTTP/1.1" 200 -
+2025-06-23 11:30:29 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:29] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-06-23 11:30:29 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:29] "GET / HTTP/1.1" 200 -
+2025-06-23 11:30:33 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:33] "GET /login HTTP/1.1" 200 -
+2025-06-23 11:30:35 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:35] "GET /registro HTTP/1.1" 200 -
+2025-06-23 11:30:57 INFO: BEGIN (implicit)
+2025-06-23 11:30:57 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:30:57 INFO: [cached since 61.94s ago] ('hola', 1, 0)
+2025-06-23 11:30:57 INFO: INSERT INTO usuarios (usuario, contrasena, email, rol) VALUES (?, ?, ?, ?)
+2025-06-23 11:30:57 INFO: [generated in 0.00026s] ('hola', 'scrypt:32768:8:1$nGxjXTHHQoE6Dpcr$6fed375cb2f0869c5f2fb1b3989243898564f4da9c03903e92b49efef21d3be30d5a7b4a0fcf4bc134023564e4529092c4a3fa41ca813b5b1801cd26e9bd605d', 'hola@gmail.com', 'usuario')
+2025-06-23 11:30:57 INFO: COMMIT
+2025-06-23 11:30:57 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:57] "[32mPOST /registro HTTP/1.1[0m" 302 -
+2025-06-23 11:30:58 INFO: 127.0.0.1 - - [23/Jun/2025 11:30:58] "GET /login HTTP/1.1" 200 -
+2025-06-23 11:31:12 INFO: BEGIN (implicit)
+2025-06-23 11:31:12 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.usuario = ?
+ LIMIT ? OFFSET ?
+2025-06-23 11:31:12 INFO: [cached since 76.92s ago] ('admin', 1, 0)
+2025-06-23 11:31:12 INFO: ROLLBACK
+2025-06-23 11:31:12 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-06-23 11:31:12 INFO: BEGIN (implicit)
+2025-06-23 11:31:12 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios
+2025-06-23 11:31:12 INFO: [cached since 51.03s ago] ()
+2025-06-23 11:31:12 INFO: ROLLBACK
+2025-06-23 11:31:12 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:12] "GET /perfil HTTP/1.1" 200 -
+2025-06-23 11:31:20 INFO: BEGIN (implicit)
+2025-06-23 11:31:20 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios 
+WHERE usuarios.id = ?
+2025-06-23 11:31:20 INFO: [generated in 0.00046s] (3,)
+2025-06-23 11:31:20 INFO: DELETE FROM usuarios WHERE usuarios.id = ?
+2025-06-23 11:31:20 INFO: [generated in 0.00034s] (3,)
+2025-06-23 11:31:20 INFO: COMMIT
+2025-06-23 11:31:20 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:20] "[32mPOST /eliminar_usuario/3 HTTP/1.1[0m" 302 -
+2025-06-23 11:31:20 INFO: BEGIN (implicit)
+2025-06-23 11:31:20 INFO: SELECT usuarios.id AS usuarios_id, usuarios.usuario AS usuarios_usuario, usuarios.contrasena AS usuarios_contrasena, usuarios.email AS usuarios_email, usuarios.rol AS usuarios_rol 
+FROM usuarios
+2025-06-23 11:31:20 INFO: [cached since 59.01s ago] ()
+2025-06-23 11:31:20 INFO: ROLLBACK
+2025-06-23 11:31:20 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:20] "GET /perfil HTTP/1.1" 200 -
+2025-06-23 11:31:41 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:41] "GET /admin/errores HTTP/1.1" 200 -
+2025-06-23 11:31:47 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:47] "GET / HTTP/1.1" 200 -
+2025-06-23 11:31:53 ERROR: Error al conectar con la API externa: HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /api/marine-animals?limit=50 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D465C07E00>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión'))
+2025-06-23 11:31:53 INFO: 127.0.0.1 - - [23/Jun/2025 11:31:53] "GET /animales HTTP/1.1" 200 -

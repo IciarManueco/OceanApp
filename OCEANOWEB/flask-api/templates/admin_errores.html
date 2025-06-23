@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Panel de Administración de Errores</h2>
+    <p class="mb-4">Bienvenido, {{ usuario }}. Aquí puedes monitorear y simular errores.</p>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    Simulador de Errores
+                </div>
+                <div class="card-body">
+                    <a href="{{ url_for('simular_error', error_code=404) }}" class="btn btn-warning me-2">Simular 404</a>
+                    <a href="{{ url_for('simular_error', error_code=500) }}" class="btn btn-danger me-2">Simular 500</a>
+                    <a href="{{ url_for('simular_lentitud') }}?delay=3" class="btn btn-info">Simular Lentitud</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header bg-dark text-white">
+            Registros de Errores
+        </div>
+        <div class="card-body">
+            {% if logs %}
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Nivel</th>
+                        <th>Mensaje</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for line in logs %}
+                    <tr>
+                        <td>{{ line.split(' ')[0] }} {{ line.split(' ')[1] if line.split(' ')|length > 1 else '' }}</td>
+                        <td>
+                            <strong>
+                                {% set log_parts = line.split(' ') %}
+                                {% if log_parts|length > 2 %}
+                                {{ log_parts[2].replace(':','') }}
+                                {% else %}
+                                UNKNOWN
+                                {% endif %}
+                            </strong>
+                        </td>
+                        <td>{{ ' '.join(line.split(' ')[3:]) if line.split(' ')|length > 3 else line }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% else %}
+            <div class="alert alert-info">No hay registros de errores disponibles</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

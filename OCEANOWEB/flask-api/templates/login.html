@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión - Mundo Marino{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg rounded-3">
+                <div class="card-header bg-info text-white text-center">
+                    <h3><i class="bi bi-person-circle"></i> Iniciar Sesión</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('login') }}">
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="usuario" name="usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contrasena" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="contrasena" name="contrasena" required>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <small>¿No tienes cuenta? <a href="{{ url_for('registro') }}">Regístrate aquí</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

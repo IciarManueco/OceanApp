@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio | Mundo Marino{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-4 mb-4">Bienvenido a Mundo Marino</h1>
+    <p class="lead mb-4">Explora nuestra increíble colección de animales marinos</p>
+
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{{ url_for('animales') }}" class="btn btn-primary btn-lg">
+            <i class="fas fa-fish me-2"></i>Ver Animales
+        </a>
+
+        {% if not session.get('usuario') %}
+        <a href="{{ url_for('registro') }}" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-user-plus me-2"></i>Registrarse
+        </a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1534766555765-2680b6d38943" class="card-img-top" alt="Delfines">
+            <div class="card-body">
+                <h5 class="card-title">Diversidad Marina</h5>
+                <p class="card-text">Descubre cientos de especies marinas con información detallada sobre cada una.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0" class="card-img-top" alt="Océano">
+            <div class="card-body">
+                <h5 class="card-title">Hábitats Oceánicos</h5>
+                <p class="card-text">Explora los diferentes ecosistemas marinos y sus características únicas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card h-100">
+            <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c" class="card-img-top" alt="Conservación">
+            <div class="card-body">
+                <h5 class="card-title">Conservación</h5>
+                <p class="card-text">Aprende sobre los esfuerzos para proteger la vida marina y cómo puedes ayudar.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

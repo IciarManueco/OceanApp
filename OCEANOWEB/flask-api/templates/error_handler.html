@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Error{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; padding-top: 50px; }
+    .error-container { max-width: 600px; margin: 0 auto; padding: 20px; }
+  </style>
+</head>
+<body>
+<div class="error-container">
+  {% if error_code == 404 %}
+  <h1 class="text-danger">Página no encontrada (404)</h1>
+  <div class="alert alert-warning">
+    <p>La página que buscas no existe o ha sido movida.</p>
+  </div>
+  {% elif error_code == 500 %}
+  <h1 class="text-danger">Error del servidor (500)</h1>
+  <div class="alert alert-danger">
+    <p>Ocurrió un error interno en el servidor.</p>
+  </div>
+  {% else %}
+  <h1 class="text-danger">Error inesperado</h1>
+  <div class="alert alert-danger">
+    <p>Algo salió mal.</p>
+  </div>
+  {% endif %}
+
+  {% if error %}
+  <div class="card mt-3">
+    <div class="card-header">
+      Detalles del error
+    </div>
+    <div class="card-body">
+      <code>{{ error }}</code>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Volver al inicio</a>
+    {% if 'user_id' in session and session.get('rol') == 'admin' %}
+    <a href="{{ url_for('admin_errores') }}" class="btn btn-secondary">Ver logs</a>
+    {% endif %}
+  </div>
+</div>
+</body>
+</html>

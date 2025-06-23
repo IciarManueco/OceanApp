@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animales Marinos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e0f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #004d40;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #backButton {
+      display: block;
+      margin: 0 auto 20px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #backButton:hover {
+      background-color: #004d40;
+    }
+    #searchInput {
+      display: block;
+      margin: 0 auto 40px auto;
+      padding: 10px 15px;
+      width: 300px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #00796b;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+    }
+    #searchInput:focus {
+      box-shadow: 0 0 8px #00796b;
+    }
+    .animal-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .animal-card {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+    .animal-card:hover {
+      transform: scale(1.03);
+    }
+    .animal-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #cfd8dc;
+    }
+    .animal-info {
+      padding: 15px 20px;
+      flex-grow: 1;
+    }
+    .animal-info h2 {
+      margin: 0 0 10px;
+      font-size: 1.4em;
+      color: #00796b;
+    }
+    .animal-info p {
+      margin: 5px 0;
+      line-height: 1.4;
+    }
+    .animal-info p span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<h1>Animales Marinos</h1>
+
+<a href="{{ url_for('index') }}" class="btn btn-primary" id="backButton">Volver a Inicio</a>
+
+<input type="text" id="searchInput" placeholder="Buscar animales por nombre, especie o hábitat..." />
+
+<div class="animal-container" id="animalContainer">
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://www.freepik.es/fotos-vectores-gratis/delf%C3%ADn-nariz-de-botella" alt="Delfín nariz de botella" />
+    <div class="animal-info">
+      <h2>Delfín nariz de botella</h2>
+      <p><span>Especie:</span> Tursiops truncatus</p>
+      <p><span>Hábitat:</span> Océanos templados y tropicales</p>
+      <p>Los delfines son conocidos por su inteligencia y comportamiento social.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Carcharodon_carcharias_White_shark_03.jpg" alt="Tiburón blanco" />
+    <div class="animal-info">
+      <h2>Tiburón blanco</h2>
+      <p><span>Especie:</span> Carcharodon carcharias</p>
+      <p><span>Hábitat:</span> Aguas costeras y oceánicas</p>
+      <p>El mayor depredador marino, conocido por su tamaño y fuerza.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/2/21/Aurelia_aurita2.jpg" alt="Medusa luna" />
+    <div class="animal-info">
+      <h2>Medusa luna</h2>
+      <p><span>Especie:</span> Aurelia aurita</p>
+      <p><span>Hábitat:</span> Mares templados y fríos</p>
+      <p>Una medusa transparente con forma de campana que flota con las corrientes.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Hippocampus_erectus1.jpg" alt="Caballito de mar común" />
+    <div class="animal-info">
+      <h2>Caballito de mar común</h2>
+      <p><span>Especie:</span> Hippocampus hippocampus</p>
+      <p><span>Hábitat:</span> Arrecifes y pastos marinos</p>
+      <p>Pequeño pez con cuerpo en forma de caballo, conocido por su método único de reproducción.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/9/99/Leatherback_turtle_swimming.jpg" alt="Tortuga laúd" />
+    <div class="animal-info">
+      <h2>Tortuga laúd</h2>
+      <p><span>Especie:</span> Dermochelys coriacea</p>
+      <p><span>Hábitat:</span> Océanos tropicales y subtropicales</p>
+      <p>La tortuga marina más grande del mundo, conocida por su caparazón flexible.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Orca_portrait.jpg" alt="Orca" />
+    <div class="animal-info">
+      <h2>Orca</h2>
+      <p><span>Especie:</span> Orcinus orca</p>
+      <p><span>Hábitat:</span> Océanos fríos y templados</p>
+      <p>También conocida como ballena asesina, es un depredador tope en el océano.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Amphiprion_ocellaris_%28Clown_anemonefish%29.jpg" alt="Pez payaso" />
+    <div class="animal-info">
+      <h2>Pez payaso</h2>
+      <p><span>Especie:</span> Amphiprioninae</p>
+      <p><span>Hábitat:</span> Arrecifes de coral</p>
+      <p>Famoso por su relación simbiótica con las anémonas de mar.</p>
+    </div>
+  </div>
+
+  <div class="animal-card">
+    <img class="animal-image" src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Asterias_rubens_%28Starfish%29.jpg" alt="Estrella de mar común" />
+    <div class="animal-info">
+      <h2>Estrella de mar común</h2>
+      <p><span>Especie:</span> Asterias rubens</p>
+      <p><span>Hábitat:</span> Fondos marinos rocosos y arenosos</p>
+      <p>Animal equinodermo con cinco brazos, capaz de regenerarlos.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const animalCards = document.querySelectorAll('.animal-card');
+
+  searchInput.addEventListener('input', function() {
+    const filter = this.value.toLowerCase();
+
+    animalCards.forEach(card => {
+      const nombre = card.querySelector('h2').textContent.toLowerCase();
+      const especie = card.querySelector('.animal-info p:nth-child(2)').textContent.toLowerCase();
+      const habitat = card.querySelector('.animal-info p:nth-child(3)').textContent.toLowerCase();
+
+      if (nombre.includes(filter) || especie.includes(filter) || habitat.includes(filter)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+</script>
+</body>
+</html>
